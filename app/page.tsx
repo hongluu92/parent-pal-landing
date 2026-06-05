@@ -1,29 +1,58 @@
-import { LandingHeader } from '@/components/landing/landing-header';
+"use client";
+
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
+
+import { Header } from '@/components/landing/header';
 import { HeroSection } from '@/components/landing/hero-section';
 import { BeforeAfterSection } from '@/components/landing/before-after-section';
-import { StoryIllustrationSection } from '@/components/landing/story-illustration-section';
+import { StoryIllustration } from '@/components/landing/story-illustration';
 import { FeaturesSection } from '@/components/landing/features-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
-import { TrustPillarsSection } from '@/components/landing/trust-pillars-section';
+import { TrustSection } from '@/components/landing/trust-section';
+import { DownloadSection } from '@/components/landing/download-section';
 import { V41Section } from '@/components/landing/v41-section';
 import { FaqSection } from '@/components/landing/faq-section';
-import { LandingFooter } from '@/components/landing/landing-footer';
+import { Footer } from '@/components/landing/footer';
 
-export default function LandingPage() {
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
+
+export default function ParentPalLanding() {
+  useEffect(() => {
+    const lenis = new Lenis();
+    lenis.on('scroll', ScrollTrigger.update);
+
+    const updateLenis = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+
+    gsap.ticker.add(updateLenis);
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove(updateLenis);
+      lenis.destroy();
+    };
+  }, []);
+
   return (
-    <main className="min-h-screen bg-[#F0F0FB] text-[#1E1B4B]">
-      <LandingHeader />
+    <main className="min-h-screen bg-[#FAF8F5] text-[#1E1B4B] paper-texture">
+      <Header />
       <HeroSection />
-      <section id="story">
-        <BeforeAfterSection />
-      </section>
-      <StoryIllustrationSection />
+      <BeforeAfterSection />
+      <StoryIllustration />
       <FeaturesSection />
       <HowItWorksSection />
-      <TrustPillarsSection />
+      <TrustSection />
+      <DownloadSection />
       <V41Section />
       <FaqSection />
-      <LandingFooter />
+      <Footer />
     </main>
   );
 }

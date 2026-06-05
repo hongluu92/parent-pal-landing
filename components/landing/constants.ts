@@ -1,54 +1,55 @@
 import {
-  Camera,
-  CheckCircle2,
-  Coins,
-  PawPrint,
-  ShieldCheck,
-  Sparkles,
-  WalletCards,
-} from 'lucide-react';
+  RiCameraFill,
+  RiCheckboxCircleFill,
+  RiCoinsFill,
+  RiFootprintFill,
+  RiSparklingFill,
+  RiWallet3Fill,
+  RiShieldCheckFill,
+} from '@remixicon/react';
 
-/** Feature cards displayed in the highlights section */
+export const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.v41.parentpal&pcampaignid=web_share';
+export const appStoreUrl = 'https://apps.apple.com/vn/app/parentpal/id6761725974?l=vi';
+
 export const features = [
   {
-    icon: Camera,
+    icon: RiCameraFill,
     title: 'Không chỉ tick cho xong',
     body: 'Con gửi ảnh minh chứng, ba mẹ duyệt trước khi điểm thưởng được cộng.',
     stat: 'Ảnh + duyệt',
   },
   {
-    icon: Coins,
+    icon: RiCoinsFill,
     title: 'Thưởng rõ ràng, dễ hiểu',
     body: 'Mỗi nhiệm vụ có điểm riêng để con nhìn thấy công sức của mình ngay trong app.',
     stat: '+ điểm',
   },
   {
-    icon: PawPrint,
+    icon: RiFootprintFill,
     title: 'DinoPet ghi nhận tiến bộ',
     body: 'Điểm, chuỗi ngày và huy hiệu giúp con thấy nỗ lực của mình có kết quả mỗi ngày.',
     stat: 'Bạn đồng hành',
   },
   {
-    icon: WalletCards,
+    icon: RiWallet3Fill,
     title: 'Ví điểm và tiết kiệm',
     body: 'Ba mẹ theo dõi số dư, mục tiêu tiết kiệm và tỷ lệ quy đổi theo cách của gia đình.',
     stat: 'Ví gia đình',
   },
   {
-    icon: Sparkles,
+    icon: RiSparklingFill,
     title: 'AI hỗ trợ chấm bài nộp',
     body: 'AI xem ảnh minh chứng và gợi ý kết quả để ba mẹ duyệt nhanh hơn, vẫn giữ quyền quyết định cuối cùng trong tay phụ huynh.',
     stat: 'AI review',
   },
   {
-    icon: ShieldCheck,
+    icon: RiShieldCheckFill,
     title: 'Quy tắc thưởng do ba mẹ đặt',
     body: 'Ba mẹ quyết định nhiệm vụ nào cần ảnh, bao nhiêu điểm và cách đổi thưởng phù hợp với nếp sinh hoạt của gia đình.',
     stat: 'Ba mẹ kiểm soát',
   },
 ];
 
-/** How-it-works step labels */
 export const steps = [
   'Ba mẹ tạo hồ sơ và chọn nhiệm vụ phù hợp',
   'Con mở app xem việc hôm nay và tự hoàn thành',
@@ -56,9 +57,8 @@ export const steps = [
   'Điểm cộng vào ví, DinoPet ghi nhận tiến bộ của con',
 ];
 
-export const stepIcons = [PawPrint, CheckCircle2, Camera, Coins];
+export const stepIcons = [RiFootprintFill, RiCheckboxCircleFill, RiCameraFill, RiCoinsFill];
 
-/** Before/After comparison items */
 export const beforeItems = [
   'Ba mẹ phải nhắc lại nhiều lần',
   'Con quên việc hoặc không rõ cần làm gì',
@@ -71,11 +71,10 @@ export const afterItems = [
   'Điểm thưởng và tiến bộ được ghi nhận tự động',
 ];
 
-/** FAQ entries */
 export const faqs = [
   {
     q: 'ParentPal đã có trên App Store hoặc Google Play chưa?',
-    a: 'Sản phẩm đang ở giai đoạn chuẩn bị phát hành. Website này giới thiệu giá trị cốt lõi trước khi mở tải chính thức.',
+    a: 'Có! ParentPal hiện đã chính thức phát hành trên cả App Store (cho các thiết bị iOS/iPhone) và Google Play Store (cho các thiết bị Android). Phụ huynh và bé có thể tải về hoàn toàn miễn phí ngay hôm nay.',
   },
   {
     q: 'App này dành cho ai?',
@@ -103,7 +102,7 @@ export const faqs = [
   },
   {
     q: 'Ảnh minh chứng và dữ liệu của con có bị công khai không?',
-    a: 'Không. Ảnh bài nộp và tiến độ của con được thiết kế để phục vụ việc theo dõi trong phạm vi gia đình. Khi phát hành chính thức, ParentPal sẽ công bố chính sách bảo mật và điều khoản sử dụng rõ ràng để phụ huynh nắm được cách dữ liệu được xử lý.',
+    a: 'Không. Ảnh bài nộp và tiến độ của con được thiết kế để phục vụ việc theo dõi riêng tư trong phạm vi gia đình. ParentPal cam kết bảo mật tuyệt đối thông tin, hình ảnh và dữ liệu gia đình theo chính sách bảo mật và tiêu chuẩn an toàn dữ liệu nghiêm ngặt.',
   },
   {
     q: 'Nếu con chưa có điện thoại riêng thì dùng được không?',
@@ -115,12 +114,11 @@ export const faqs = [
   },
 ];
 
-/** Floating icon marks for hero background */
 export const heroMarks = [
-  { icon: CheckCircle2, className: 'left-[46%] top-[32%] text-[#4F46E5]', delay: '-1s' },
-  { icon: Camera, className: 'left-[36%] top-[11%] text-[#F97316]', delay: '-3s' },
-  { icon: Coins, className: 'right-[12%] top-[24%] text-[#FBBF24]', delay: '-5s' },
-  { icon: PawPrint, className: 'left-[18%] bottom-[7%] text-[#22C55E]', delay: '-2s' },
-  { icon: WalletCards, className: 'right-[30%] bottom-[14%] text-[#4F46E5]', delay: '-6s' },
-  { icon: Sparkles, className: 'right-[6%] bottom-[36%] text-[#F97316]', delay: '-4s' },
+  { icon: RiCheckboxCircleFill, className: 'left-[46%] top-[32%] text-[#4F46E5]', delay: '-1s' },
+  { icon: RiCameraFill, className: 'left-[36%] top-[11%] text-[#F97316]', delay: '-3s' },
+  { icon: RiCoinsFill, className: 'right-[12%] top-[24%] text-[#FBBF24]', delay: '-5s' },
+  { icon: RiFootprintFill, className: 'left-[18%] bottom-[7%] text-[#22C55E]', delay: '-2s' },
+  { icon: RiWallet3Fill, className: 'right-[30%] bottom-[14%] text-[#4F46E5]', delay: '-6s' },
+  { icon: RiSparklingFill, className: 'right-[6%] bottom-[36%] text-[#F97316]', delay: '-4s' },
 ];
