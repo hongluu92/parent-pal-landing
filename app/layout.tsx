@@ -1,20 +1,8 @@
 import type { Metadata } from 'next';
-import { Bricolage_Grotesque, Plus_Jakarta_Sans } from 'next/font/google';
+import type { CSSProperties } from 'react';
 import 'antd/dist/reset.css';
 import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
-
-const bricolage = Bricolage_Grotesque({
-  subsets: ['latin', 'vietnamese'],
-  variable: '--font-bricolage',
-  display: 'swap',
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ['latin', 'vietnamese'],
-  variable: '--font-plus-jakarta',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'ParentPal - Con tự giác việc nhà, ba mẹ nhàn tênh',
@@ -37,6 +25,11 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const fontVariables: CSSProperties = {
+    '--font-plus-jakarta': "'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif",
+    '--font-bricolage': "'Bricolage Grotesque', 'Segoe UI', Arial, sans-serif",
+  } as CSSProperties;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -57,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="vi" className={`h-full ${bricolage.variable} ${plusJakarta.variable}`}>
+    <html lang="vi" className="h-full" style={fontVariables}>
       <head>
         <script
           type="application/ld+json"
