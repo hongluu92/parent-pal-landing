@@ -124,6 +124,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-plus-jakarta), sans-serif !important;
@@ -132,61 +133,78 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   html {
     font-family: var(--font-plus-jakarta), sans-serif !important;
     scroll-behavior: auto;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-bricolage), sans-serif !important;
   }
 }
 
 @keyframes parentpal-gradient-flow {
+
   0%,
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
 }
 
 @keyframes parentpal-phone-left {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0) rotate(-1deg);
   }
+
   50% {
     transform: translate3d(0, -20px, 0) rotate(1.4deg);
   }
 }
 
 @keyframes parentpal-phone-right {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0) rotate(1deg);
   }
+
   50% {
     transform: translate3d(0, 24px, 0) rotate(-1.2deg);
   }
 }
 
 @keyframes parentpal-hero-rail {
+
   0%,
   100% {
     opacity: 0.35;
   }
+
   50% {
     opacity: 0.7;
   }
 }
 
 @keyframes parentpal-hero-mark {
+
   0%,
   100% {
     opacity: 0.56;
     transform: translate3d(0, 0, 0) rotate(-4deg);
   }
+
   50% {
     opacity: 0.92;
     transform: translate3d(32px, -26px, 0) rotate(8deg);
@@ -194,11 +212,13 @@
 }
 
 @keyframes parentpal-hero-card {
+
   0%,
   100% {
     opacity: 0.62;
     transform: translate3d(-14px, 0, 0) rotate(-3deg);
   }
+
   50% {
     opacity: 0.95;
     transform: translate3d(20px, -18px, 0) rotate(4deg);
@@ -206,10 +226,12 @@
 }
 
 @keyframes parentpal-feature-drift {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0) scale(1.02);
   }
+
   50% {
     transform: translate3d(-16px, 10px, 0) scale(1.05);
   }
@@ -254,6 +276,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .animate-parentpal-gradient-flow,
   .animate-parentpal-hero-rail,
   .animate-parentpal-hero-rail-reverse,
@@ -275,16 +298,33 @@
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(2deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(2deg);
+  }
 }
+
 @keyframes float-medium {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(-3deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
 }
+
 .animate-float-slow {
   animation: float-slow 7s ease-in-out infinite;
 }
+
 .animate-float-medium {
   animation: float-medium 9s ease-in-out infinite;
 }
